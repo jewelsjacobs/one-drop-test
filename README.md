@@ -1,6 +1,6 @@
 # One Drop Api Read Cache Test
 
-Microservices for the One Drop [interview code test](INTERVIEW_TEST.md)
+Microservices for the One Drop [interview code test](CHALLANGE.md)
 
 Project is built using the [lagom Microservices](https://www.lagomframework.com/) framework for the following reasons:
 1. Required to use [Scala](https://www.scala-lang.org/) and [Play Framework](https://www.playframework.com/). lagom incorporates both.

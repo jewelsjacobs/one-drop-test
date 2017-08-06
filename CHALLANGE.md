@@ -1,6 +1,6 @@
-#API Read Cache
+# API Read Cache
 
-##Specification
+## Specification
 
 At One Drop, we interact with several different vendor APIs to implement services that are important for operating the company and delivering the viewer experience.  Sometimes, the scale of our operations puts an unnecessary burden upon these vendors and in order to alleviate this problem, we implement read caching for the vendor APIs.  Caching reads also provides an opportunity to define custom views of authoritative data, which saves some processing time for downstream services.
 
@@ -31,7 +31,7 @@ With the cached data, implement the following custom views for organization repo
 
 - Top-N repos by watchers (/view/top/N/watchers).
 
-##Implementation guidelines:
+## Implementation guidelines:
 
 - The service should be delivered as a git repository with a README.md that provides instructions for building, running and testing.
 
@@ -44,7 +44,7 @@ With the cached data, implement the following custom views for organization repo
 - Given the high query load for a service like this at One Drop, we’d like to be able to _horizontally scale the caches being queried internally without at the same time scaling up our API calls against the Github API. That is, the number of requests to the underlying GitHub API should not increase with the number of caching servers we run._ 
   - How you accomplish that is up to you as long as the desired outcome is achieved. You are free to choose other services such as Redis, Etcd or Consul, for helping to maintain state if needed.
 
-##Design considerations:
+## Design considerations:
 
 Write the code assuming you would have to maintain it.
 
