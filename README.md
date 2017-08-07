@@ -1,5 +1,7 @@
 # One Drop Api Read Cache Test
 
+# DON'T TRY TO RUN, WON'T WORK YET! :P
+
 Microservices for the One Drop [interview code test](CHALLANGE.md)
 
 Project is built using the [lagom Microservices](https://www.lagomframework.com/) framework for the following reasons:
