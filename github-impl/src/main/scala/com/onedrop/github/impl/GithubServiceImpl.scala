@@ -1,7 +1,5 @@
 package com.onedrop.github.impl
 
-import com.onedrop.github.api
-import com.onedrop.github.api.GithubService
 import com.lightbend.lagom.scaladsl.api.ServiceCall
 import com.lightbend.lagom.scaladsl.api.broker.Topic
 import com.lightbend.lagom.scaladsl.broker.TopicProducer
@@ -14,7 +12,7 @@ import com.onedrop.github.api.GithubService
   */
 class GithubServiceImpl(persistentEntityRegistry: PersistentEntityRegistry) extends GithubService {
 
-  override def hello(id: String) = ServiceCall { _ =>
+  override def getOrg(org: String) = ServiceCall { _ =>
     // Look up the github entity for the given ID.
     val ref = persistentEntityRegistry.refFor[GithubEntity](id)
 
@@ -22,7 +20,7 @@ class GithubServiceImpl(persistentEntityRegistry: PersistentEntityRegistry) exte
     ref.ask(Hello(id))
   }
 
-  override def useGreeting(id: String) = ServiceCall { request =>
+  override def getMembers(org: String) = ServiceCall { request =>
     // Look up the github entity for the given ID.
     val ref = persistentEntityRegistry.refFor[GithubEntity](id)
 
@@ -31,7 +29,7 @@ class GithubServiceImpl(persistentEntityRegistry: PersistentEntityRegistry) exte
   }
 
 
-  override def greetingsTopic(): Topic[github.api.GreetingMessageChanged] =
+  override def getRepos(org: String): Topic[github.api.GreetingMessageChanged] =
     TopicProducer.singleStreamWithOffset {
       fromOffset =>
         persistentEntityRegistry.eventStream(GithubEvent.Tag, fromOffset)

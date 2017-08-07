@@ -1,9 +1,8 @@
-organization in ThisBuild := "com.example"
+organization in ThisBuild := "com.dropone.github"
 version in ThisBuild := "1.0-SNAPSHOT"
 
 // the Scala version that will be used for cross-compiled libraries
 scalaVersion in ThisBuild := "2.11.8"
-libraryDependencies += "com.47deg" %% "github4s" % "0.15.0"
 
 val macwire = "com.softwaremill.macwire" %% "macros" % "2.2.5" % "provided"
 val scalaTest = "org.scalatest" %% "scalatest" % "3.0.1" % Test
@@ -49,3 +48,7 @@ lazy val `github-stream-impl` = (project in file("github-stream-impl"))
     )
   )
   .dependsOn(`github-stream-api`, `github-api`)
+
+lagomCassandraCleanOnStart in ThisBuild := false
+
+lagomUnmanagedServices in ThisBuild += ("github" -> "https://api.github.com")

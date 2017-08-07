@@ -8,8 +8,8 @@ import scala.concurrent.Future
 /**
   * Implementation of the GithubStreamService.
   */
-class GithubStreamServiceImpl(GithubService: GithubService) extends GithubStreamService {
+class GithubStreamServiceImpl(githubService: GithubService) extends GithubStreamService {
   def stream = ServiceCall { hellos =>
-    Future.successful(hellos.mapAsync(8)(GithubService.hello(_).invoke()))
+    Future.successful(hellos.mapAsync(8)(githubService.hello(_).invoke()))
   }
 }

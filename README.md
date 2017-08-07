@@ -12,8 +12,6 @@ Project is built using the [lagom Microservices](https://www.lagomframework.com/
  - Service discovery
    - lagom has [service discovery included](https://www.lagomframework.com/documentation/1.3.x/scala/ServiceDiscovery.html)
  
-Also uses the [Github4s](http://47deg.github.io/github4s/) which is a Github API wrapper written in Scala. This is also in the 
-
 # Requirements
 
 View the lagom [Introduction and prerequisites](https://www.lagomframework.com/documentation/1.3.x/scala/Installation.html#JDK) guide for requirements
@@ -33,3 +31,22 @@ $ cd one-drop-test
 $ sbt
 $ runAll
 ```
+
+# References
+
+## Lagom Sample Projects
+
+### Service Discovery
+- https://github.com/typesafehub/service-locator-dns
+- https://github.com/jboner/lagom-service-locator-consul (out of date)
+- https://github.com/jboner/lagom-service-locator-zookeeper (out of date)
+
+### Twitter like app
+https://github.com/purijatin/lagom-scala-chirper
+
+### Descriptor Generator
+https://github.com/lagom/sbt-lagom-descriptor-generator
+
+## Learning
+https://blog.codecentric.de/en/2017/02/cqrs-event-sourcing-lagom/
+https://www.lagomframework.com/documentation/1.3.x/java/ReadSide.html

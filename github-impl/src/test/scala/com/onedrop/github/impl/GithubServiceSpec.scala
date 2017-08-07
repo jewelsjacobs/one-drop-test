@@ -2,9 +2,8 @@ package com.onedrop.github.impl
 
 import com.lightbend.lagom.scaladsl.server.LocalServiceLocator
 import com.lightbend.lagom.scaladsl.testkit.ServiceTest
+import com.onedrop.github.api.{GithubService, GreetingMessage}
 import org.scalatest.{AsyncWordSpec, BeforeAndAfterAll, Matchers}
-import com.onedrop.github.api._
-import com.onedrop.github.api.{GreetingMessage, GithubService}
 
 class GithubServiceSpec extends AsyncWordSpec with Matchers with BeforeAndAfterAll {
 

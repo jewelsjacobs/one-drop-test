@@ -35,6 +35,9 @@ abstract class GithubApplication(context: LagomApplicationContext)
   // Register the JSON serializer registry
   override lazy val jsonSerializerRegistry = GithubSerializerRegistry
 
+
+  lazy val github = serviceClient.implement[GithubService]
+
   // Register the github persistent entity
   persistentEntityRegistry.register(wire[GithubEntity])
 }
